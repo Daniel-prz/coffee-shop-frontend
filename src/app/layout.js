@@ -10,11 +10,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <UserProvider>
-        <CartProvider>
+      <CartProvider>
+        <UserProvider>
           <body>{children}</body>
-        </CartProvider>
-      </UserProvider>
+        </UserProvider>
+      </CartProvider>
     </html>
   );
 }

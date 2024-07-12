@@ -8,7 +8,7 @@ import { CartContext } from "../context/cart";
 import { UserContext } from "../context/user";
 
 export default function Header() {
-  const { setShow, show, cartItems } = useContext(CartContext);
+  const { setShow, show, cartItems, cartLength } = useContext(CartContext);
   const { isLoggedIn, logOut } = useContext(UserContext);
   const pathname = usePathname();
   console.log(pathname);
@@ -28,13 +28,16 @@ export default function Header() {
         )}
         {isLoggedIn && <button onClick={logOut}>Log Out</button>}
         {pathname !== "/UserAuth" && pathname !== "/SignUp" && (
-          <button
-            onClick={() => {
-              setShow(true);
-            }}
-          >
-            Cart {cartItems.length}
-          </button>
+          <>
+            <button
+              onClick={() => {
+                setShow(true);
+              }}
+            >
+              Cart {cartLength > 0 && cartLength}
+              {/* Conditionally render cart count */}
+            </button>
+          </>
         )}
       </nav>
     </div>

@@ -16,7 +16,7 @@ export default function Page() {
         <div>
           <Header />
           <Home />
-        </div>{" "}
+        </div>
         <Footer />
       </div>
       <CartDisplay showModal={show} toggle={setShow} />

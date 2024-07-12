@@ -1,17 +1,32 @@
 "use client";
-import React,{ createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
   const [show, setShow] = useState(false);
+  const [cartItems, setCartItems] = useState(() => {
+    if (typeof window !== "undefined") {
+      const savedCartItems = localStorage.getItem("cartItems");
+      return savedCartItems ? JSON.parse(savedCartItems) : [];
+    }
+    return [];
+  });
+
   useEffect(() => {
-    const data = localStorage.getItem("cartItems");
-    if (data) {
-      setCartItems(JSON.parse(data));
+    if (typeof window !== "undefined") {
+      const data = localStorage.getItem("cartItems");
+      if (data) {
+        setCartItems(JSON.parse(data));
+      }
     }
   }, []);
+
+  const [cartLength, setCartLength] = useState(0); // State for cart length
+
+  useEffect(() => {
+    setCartLength(cartItems.length);
+  }, [cartItems]);
 
   const [transaction, setTransaction] = useState(true);
   const toggleTransaction = () => {
@@ -80,6 +95,7 @@ export const CartProvider = ({ children }) => {
         removeFromCart,
         clearCart,
         getCartTotal,
+        cartLength,
       }}
     >
       {children}

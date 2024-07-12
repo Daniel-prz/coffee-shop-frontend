@@ -2,7 +2,7 @@
 
 import { CartContext } from "@/app/context/cart.jsx";
 import CartItem from "./CartItem";
-import React,{ useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "@/app/context/user";
 import Link from "next/link";
 
@@ -49,7 +49,7 @@ export default function CartDisplay({ showModal, toggle }) {
             ))}
           </div>
           {cartItems.length > 0 ? (
-            <div className="flex flex-col justify-between items-center">
+            <div className="flex flex-col justify-between items-center mb-4">
               <h1 className="text-lg font-bold">Total: ${getCartTotal()}</h1>
 
               {isLoggedIn ? (

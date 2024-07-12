@@ -13,7 +13,7 @@ export default function CartItem({ item }) {
           <img
             src={item.imageUrl}
             alt={item.name}
-            className="rounded-md h-24"
+            className="rounded-md h-20"
           />
           <div className="flex flex-col gap-1 text-center">
             <h1 className="text-lg font-bold">{item.name}</h1>
