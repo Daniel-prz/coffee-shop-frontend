@@ -1,15 +1,38 @@
+"use client";
 import Link from "next/link";
-import React from "react";
-
+import React, { useContext, useState } from "react";
+import { usePathname } from "next/navigation";
+import { CartContext } from "../context/cart";
+import { UserContext } from "../context/user";
 export default function Header() {
+  const { setShow, show, cartItems } = useContext(CartContext);
+  const { isLoggedIn, logOut } = useContext(UserContext);
+  const pathname = usePathname();
+  console.log(pathname);
+  console.log(isLoggedIn);
+
   return (
-    <div className="flex flex-col md:flex-row justify-around pt-12">
+    <div className="flex flex-col md:flex-row justify-around pt-12 items-center">
       <div className="">
-        <h1> Cafe</h1>
+        <Link href={`/`}>
+          <h1 className="cursor-pointer text-4xl mb-4 md:mb-0">Cafe</h1>
+        </Link>
         <p></p>
       </div>
-      <nav>
-        <Link href="./UserAuth">Log In</Link>
+      <nav className="gap-12 flex flex-row text-xl">
+        {!isLoggedIn && pathname === "/" && (
+          <Link href="/UserAuth">Log In</Link>
+        )}
+        {isLoggedIn && <button onClick={logOut}>Log Out</button>}
+        {pathname !== "/UserAuth" && pathname !== "/SignUp" && (
+          <button
+            onClick={() => {
+              setShow(true);
+            }}
+          >
+            Cart {cartItems.length}
+          </button>
+        )}
       </nav>
     </div>
   );
