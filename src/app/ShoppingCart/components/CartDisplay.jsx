@@ -20,6 +20,8 @@ export default function CartDisplay({ showModal, toggle }) {
 
   const [animationClass, setAnimationClass] = useState("");
 
+  // SLIDE IN ANIMATION
+  
   useEffect(() => {
     if (showModal) {
       setAnimationClass("modal-enter");

@@ -17,6 +17,10 @@ export default function LogInForm() {
     isLoggedIn,
   } = useContext(UserContext);
 
+  // SENDS LOGIN REQUEST TO BACK END WITH EMAIL AND PASSWORD
+  // SETS TOKEN STATE AND LOCAL STORAGE TO RETURNED TOKEN
+  // SETS USER STATE AND LOCAL STORAGE TO RETURNED USER
+  // REDIRECTS TO HOME
   const formHandler = async (e) => {
     e.preventDefault();
     const response = await axios.post(

@@ -7,6 +7,10 @@ import { UserContext } from "../context/user";
 export default function ProductsDisplay({}) {
   const { user, tokenHandler } = useContext(UserContext);
   const [items, setItems] = useState({ products: [] });
+
+  // FETCHES ITEMS FROM BACK END ON PAGE LOAD,
+  // AS WELL AS REFRESHES TOKEN IF LOGGED IN
+
   useEffect(() => {
     async function getProducts() {
       const request = await axios.get(
@@ -22,6 +26,9 @@ export default function ProductsDisplay({}) {
   }, [user, tokenHandler]);
 
   return (
+
+    // MAPS ITEMS STATE DISPLAYING ITEMS
+    
     <div>
       <div className="flex flex-col sm:flex-row sm:flex-wrap">
         {console.log(items)}
