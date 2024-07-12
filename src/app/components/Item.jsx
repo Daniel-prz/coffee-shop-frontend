@@ -6,7 +6,12 @@ export default function Item({ item }) {
   const { addToCart } = useContext(CartContext);
   return (
     <div className=" flex flex-col items-center shop-item">
-      <Image src={item.imageUrl} width={100} height={80}></Image>
+      <Image
+        src={item.imageUrl}
+        width={100}
+        height={80}
+        alt={item.name}
+      ></Image>
       <div className="flex flex-col items-center text-center justify-between">
         <div>
           <h4 className="cursor-default">{item.name}</h4>
