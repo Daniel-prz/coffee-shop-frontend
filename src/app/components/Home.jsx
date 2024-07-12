@@ -1,4 +1,4 @@
-"use client";
+
 import React, { useContext } from "react";
 import ProductsDisplay from "./ProductsDisplay";
 import { UserContext } from "../context/user";
