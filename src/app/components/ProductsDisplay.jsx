@@ -1,6 +1,6 @@
 "use client";
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React,{ useContext, useEffect, useState } from "react";
 import Item from "./Item";
 import { UserContext } from "../context/user";
 
@@ -19,7 +19,7 @@ export default function ProductsDisplay({}) {
     if (user) {
       tokenHandler();
     }
-  }, []);
+  }, [user, tokenHandler]);
 
   return (
     <div>

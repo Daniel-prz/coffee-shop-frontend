@@ -1,15 +1,14 @@
-"use client";
-
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-import { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Home from "./components/Home";
-import { CartContext } from "./context/cart";
-import CartDisplay from "./ShoppingCart/components/CartDisplay";
 
-export default function page() {
-  const { setShow, show, cartItems } = useContext(CartContext);
+import CartDisplay from "./ShoppingCart/components/CartDisplay";
+import { CartContext } from "./context/cart";
+
+export default function Page() {
+  const { setShow, show } = useContext(CartContext);
   return (
     <>
       <div className=" flex flex-col justify-between relative h-full min-h-[100vh] gap-8">

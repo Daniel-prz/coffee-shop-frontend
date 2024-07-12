@@ -1,13 +1,10 @@
 "use client";
-import { createContext, useState, useEffect } from "react";
+import React,{ createContext, useState, useEffect } from "react";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState(() => {
-    const data = localStorage.getItem("cartItems");
-    return data ? JSON.parse(data) : [];
-  });
+  const [cartItems, setCartItems] = useState([]);
   const [show, setShow] = useState(false);
   useEffect(() => {
     const data = localStorage.getItem("cartItems");
@@ -70,13 +67,6 @@ export const CartProvider = ({ children }) => {
     console.log(cartItems);
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
-
-  useEffect(() => {
-    const cartItems = localStorage.getItem("cartItems");
-    if (cartItems) {
-      setCartItems(JSON.parse(cartItems));
-    }
-  }, []);
 
   return (
     <CartContext.Provider

@@ -1,9 +1,12 @@
 "use client";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+
 import { usePathname } from "next/navigation";
+
+import { useContext } from "react";
 import { CartContext } from "../context/cart";
 import { UserContext } from "../context/user";
+
 export default function Header() {
   const { setShow, show, cartItems } = useContext(CartContext);
   const { isLoggedIn, logOut } = useContext(UserContext);

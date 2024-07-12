@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import { UserContext } from "../context/user";
 import { useRouter } from "next/navigation";
 
-export default function page() {
+export default function Page() {
   const { isLoggedIn } = useContext(UserContext);
   const router = useRouter();
   useEffect(() => {

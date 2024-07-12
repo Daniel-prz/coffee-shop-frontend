@@ -1,9 +1,8 @@
 "use client";
-import PropTypes from "prop-types";
 
 import { CartContext } from "@/app/context/cart.jsx";
 import CartItem from "./CartItem";
-import { useContext, useEffect, useState } from "react";
+import React,{ useContext, useEffect, useState } from "react";
 import { UserContext } from "@/app/context/user";
 import Link from "next/link";
 
