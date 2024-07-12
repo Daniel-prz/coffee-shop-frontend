@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React,{ useContext } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../context/cart";
 
 export default function Item({ item }) {
@@ -9,7 +9,7 @@ export default function Item({ item }) {
       <Image
         src={item.imageUrl}
         width={100}
-        height={80}
+        height={100}
         alt={item.name}
       ></Image>
       <div className="flex flex-col items-center text-center justify-between">
