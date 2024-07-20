@@ -9,6 +9,10 @@
   font-family: "Lucida Sans", Arial, sans-serif;
   font-style: italic;
 }
+
+.home-background {
+  background-color: rgb(250, 253, 255);
+}
 .img-border {
   border: 0.5px solid rgb(188, 188, 188);
   border-radius: 3px;

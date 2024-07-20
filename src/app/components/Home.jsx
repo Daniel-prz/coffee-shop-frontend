@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center">
       {" "}
-      <div className="flex flex-col items-center w-full pt-8 wflex bg-slate-100">
+      <div className="flex flex-col items-center w-full pt-8 home-background">
         <h2 className="text-xl ">
           Welcome{isLoggedIn ? ", " : ""}
           {user.name}
