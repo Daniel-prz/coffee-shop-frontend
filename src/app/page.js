@@ -12,8 +12,8 @@ export default function Page() {
   const { setShow, show } = useContext(CartContext);
   return (
     <>
-      <div className=" flex flex-col justify-between relative h-full min-h-[100vh] gap-8">
-        <div>
+      <div className=" flex flex-col justify-between relative h-full min-h-[100vh]">
+        <div className="flex flex-col">
           <Header />
           <Home />
         </div>

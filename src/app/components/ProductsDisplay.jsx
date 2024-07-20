@@ -28,8 +28,8 @@ export default function ProductsDisplay({}) {
   return (
     // MAPS ITEMS STATE DISPLAYING ITEMS
 
-    <div className="w-[75%] flex justify-center items-center">
-      <div className="flex flex-col items-center justify-center sm:flex-row sm:flex-wrap">
+    <div className="flex items-center justify-center w-[90%]">
+      <div className="flex flex-col items-center justify-center pb-8 sm:flex-row sm:flex-wrap">
         {console.log(items)}
         {items.products?.map((item) => {
           return <Item key={item._id} item={item} />;
