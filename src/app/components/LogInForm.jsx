@@ -34,13 +34,13 @@ export default function LogInForm() {
     router.push("/");
   };
   return (
-    <div className="flex-col flex items-center mt-12 text-center">
-      <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+    <div className="flex flex-col items-center mt-8 text-center">
+      <h3 className="mb-4 text-2xl font-semibold text-gray-800">
         Have an account with us?
       </h3>
       <form
         onSubmit={formHandler}
-        className="flex flex-col text-left mt-4 w-80"
+        className="flex flex-col mt-4 text-left w-80"
       >
         <label className="mb-2 text-gray-700">
           Email:
@@ -51,7 +51,7 @@ export default function LogInForm() {
             id="logInEmail"
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
-            className="border border-gray-300 rounded-md p-2 w-full mt-1"
+            className="w-full p-2 mt-1 border border-gray-300 rounded-md"
           />
         </label>
         <label className="mb-4 text-gray-700">
@@ -63,19 +63,19 @@ export default function LogInForm() {
             id="logInPassword"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
-            className="border border-gray-300 rounded-md p-2 w-full mt-1"
+            className="w-full p-2 mt-1 border border-gray-300 rounded-md"
           />
         </label>
         <button
           type="submit"
-          className="text-xl bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200"
+          className="py-2 text-xl text-white transition duration-200 bg-blue-600 rounded-md hover:bg-blue-500"
         >
           Log In
         </button>
       </form>
       <div className="mt-6">
         <p className="text-gray-700">or</p>
-        <Link href="/SignUp" className="text-lg text-blue-500 hover:underline">
+        <Link href="/SignUp" className="text-lg text-blue-600 hover:underline">
           Sign Up
         </Link>
       </div>

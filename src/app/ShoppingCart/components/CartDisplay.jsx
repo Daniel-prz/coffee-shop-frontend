@@ -21,7 +21,7 @@ export default function CartDisplay({ showModal, toggle }) {
   const [animationClass, setAnimationClass] = useState("");
 
   // SLIDE IN ANIMATION
-  
+
   useEffect(() => {
     if (showModal) {
       setAnimationClass("modal-enter");
@@ -32,31 +32,31 @@ export default function CartDisplay({ showModal, toggle }) {
 
   return (
     <div
-      className={`flex-col flex items-center fixed inset-0 left-1/2 bg-white dark:bg-black gap-8 p-10 text-black dark:text-white font-normal uppercase text-sm ${animationClass}`}
+      className={`flex-col flex items-center fixed inset-0 left-1/2 bg-zinc-900 gap-8 p-10 text-white font-normal uppercase text-sm ${animationClass}`}
     >
       {showModal && transaction ? (
         <>
           <h1 className="text-2xl font-bold">Cart</h1>
           <div className="absolute right-16 top-10">
             <button
-              className="px-4 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
+              className="px-4 py-2 text-xs font-bold text-white uppercase bg-blue-900 rounded hover:bg-blue-800 focus:outline-none focus:bg-gray-700"
               onClick={() => toggle(false)}
             >
               Close
             </button>
           </div>
-          <div className="flex flex-col gap-4 text-center">
+          <div className="flex flex-col gap-4 overflow-y-auto text-center max-h-[90vh] pr-8 cart-scrollbar">
             {cartItems.map((item, index) => (
               <CartItem key={index} item={item} />
             ))}
           </div>
           {cartItems.length > 0 ? (
-            <div className="flex flex-col justify-between items-center mb-4">
+            <div className="flex flex-col items-center justify-between ">
               <h1 className="text-lg font-bold">Total: ${getCartTotal()}</h1>
 
               {isLoggedIn ? (
                 <button
-                  className="px-4 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
+                  className="px-4 py-2 text-xs font-bold text-white uppercase bg-gray-800 rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
                   onClick={() => {
                     clearCart();
                     toggleTransaction();
@@ -66,7 +66,7 @@ export default function CartDisplay({ showModal, toggle }) {
                 </button>
               ) : (
                 <Link
-                  className="px-4 py-2 bg-blue-800 text-white text-xs font-bold uppercase rounded hover:bg-blue-700 focus:outline-none focus:bg-blue-700"
+                  className="px-4 py-2 text-xs font-bold text-white uppercase bg-blue-800 rounded hover:bg-blue-700 focus:outline-none focus:bg-blue-700"
                   href={"/UserAuth"}
                 >
                   Log In to Checkout

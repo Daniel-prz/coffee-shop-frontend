@@ -43,9 +43,9 @@ export default function SignUp() {
     <div className="flex flex-col items-center text-center">
       <form
         onSubmit={formHandler}
-        className="flex flex-col gap-8 mt-4 w-80 text-left"
+        className="flex flex-col gap-8 mt-8 text-left w-80"
       >
-        <h3 className="text-2xl font-semibold text-gray-800 ">
+        <h3 className="text-2xl font-semibold text-center text-gray-800">
           Create Account
         </h3>
         <label className="text-gray-700">
@@ -57,7 +57,7 @@ export default function SignUp() {
             id="name"
             placeholder="Name"
             onChange={(e) => setName(e.target.value)}
-            className="border border-gray-300 rounded-md p-2 w-full mt-1"
+            className="w-full p-2 mt-1 border border-gray-300 rounded-md"
           />
         </label>
         <label className="text-gray-700">
@@ -69,7 +69,7 @@ export default function SignUp() {
             id="SignUpEmail"
             placeholder="Your email"
             onChange={(e) => setEmail(e.target.value)}
-            className="border border-gray-300 rounded-md p-2 w-full mt-1"
+            className="w-full p-2 mt-1 border border-gray-300 rounded-md"
           />
         </label>
         <label className="text-gray-700">
@@ -81,13 +81,13 @@ export default function SignUp() {
             id="signUpPassword"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
-            className="border border-gray-300 rounded-md p-2 w-full mt-1"
+            className="w-full p-2 mt-1 border border-gray-300 rounded-md"
           />
         </label>
 
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200 w-full"
+          className="w-full py-2 text-white transition duration-200 bg-blue-700 rounded-md hover:bg-blue-600"
         >
           Sign Up
         </button>

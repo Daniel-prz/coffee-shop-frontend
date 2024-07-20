@@ -6,14 +6,15 @@ export default function CartItem({ item }) {
   return (
     <div>
       <div
-        className="flex justify-between items-center text-center "
+        className="flex items-center justify-between text-center "
         key={item._id}
       >
         <div className="flex gap-4">
           <img
             src={item.imageUrl}
             alt={item.name}
-            className="rounded-md h-20"
+            title={item.name}
+            className="h-20 rounded-md"
           />
           <div className="flex flex-col gap-1 text-center">
             <h1 className="text-lg font-bold">{item.name}</h1>
@@ -22,7 +23,7 @@ export default function CartItem({ item }) {
         </div>
         <div className="flex gap-4 ml-2">
           <button
-            className="px-4 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
+            className="px-4 py-2 text-xs font-bold text-white uppercase bg-blue-900 rounded hover:bg-blue-800 focus:outline-none focus:bg-gray-700"
             onClick={() => {
               addToCart(item);
             }}
@@ -31,7 +32,7 @@ export default function CartItem({ item }) {
           </button>
           <p>{item.quantity}</p>
           <button
-            className="px-4 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
+            className="px-4 py-2 text-xs font-bold text-white uppercase bg-blue-900 rounded hover:bg-blue-800 focus:outline-none focus:bg-gray-700"
             onClick={() => {
               removeFromCart(item);
             }}

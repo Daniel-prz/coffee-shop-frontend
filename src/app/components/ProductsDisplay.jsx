@@ -1,6 +1,6 @@
 "use client";
 import axios from "axios";
-import React,{ useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Item from "./Item";
 import { UserContext } from "../context/user";
 
@@ -26,11 +26,10 @@ export default function ProductsDisplay({}) {
   }, [user, tokenHandler]);
 
   return (
-
     // MAPS ITEMS STATE DISPLAYING ITEMS
-    
-    <div>
-      <div className="flex flex-col sm:flex-row sm:flex-wrap">
+
+    <div className="w-[75%] flex justify-center items-center">
+      <div className="flex flex-col items-center justify-center sm:flex-row sm:flex-wrap">
         {console.log(items)}
         {items.products?.map((item) => {
           return <Item key={item._id} item={item} />;
